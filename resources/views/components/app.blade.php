@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('page-title', $title)
+@section('page-title', $pageTitle)
 
 
 @section('contents')
