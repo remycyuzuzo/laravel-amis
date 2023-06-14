@@ -7,6 +7,9 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item active">
+                        <a href="{{ '/' }}"><i class="fas fa-home"></i> Dashboard</a>
+                    </li>
                     @isset($breadcrumbMenuItems)
                         @foreach ($breadcrumbMenuItems as $menu_item)
                             <li class="breadcrumb-item active">
