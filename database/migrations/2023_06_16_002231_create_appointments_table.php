@@ -19,10 +19,12 @@ return new class extends Migration
 
             $table->dateTime('start_time');
             $table->dateTime('end_time');
-            $table->foreignId('customer_service_id')->constrained('customer_services')->cascadeOnDelete(); // Update here appropriately
+            $table->unsignedBigInteger('customer_service_id')->nullable();
+            $table->foreign('customer_service_id')->on('customer_services')->references('id');
             $table->string('description')->nullable();
             $table->string('status', 20);
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();  // Update here appropriately
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->on('users')->references('id');
         });
     }
 
