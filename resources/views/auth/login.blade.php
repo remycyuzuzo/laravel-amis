@@ -11,12 +11,18 @@
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
 
-                <form action="../../index3.html" method="post">
-                    <div class="input-group mb-3">
-                        <input type="email" name="email" class="form-control" placeholder="Email">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
+                <form action="{{ route('login') }}" method="post">
+                    @csrf
+                    <div class="form-input">
+                        @error('email')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                        <div class="input-group mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Email">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-envelope"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -28,6 +34,9 @@
                             </div>
                         </div>
                     </div>
+                    @if (session('error'))
+                        <div class="alert alert-danger">password or email address incorrect</div>
+                    @endif
                     <div class="row">
                         <div class="col-8">
                             <div class="icheck-primary">
