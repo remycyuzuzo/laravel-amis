@@ -12,7 +12,32 @@
     integrity="sha512-KBeR1NhClUySj9xBB0+KRqYLPkM6VvXiiWaSz/8LCQNdRpUm38SWUrj0ccNDNSkwCD9qPA4KobLliG26yPppJA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+<script>
+    // Function to update the live clock
+    function updateLiveClock() {
+        var currentTime = new Date();
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
 
+        // Convert hours to 12-hour format
+        hours = hours % 12;
+        hours = hours ? hours : 12; // "0" should be displayed as "12"
+
+        // Add leading zeros to minutes if necessary
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+
+        // Set the content of the span element
+        var clockElement = document.querySelector('[data-live_clock]');
+        clockElement.textContent = hours + ':' + minutes + ' ' + ampm;
+
+        // Update the clock every second
+        setTimeout(updateLiveClock, 1000);
+    }
+
+    // Call the function when the page loads
+    window.onload = updateLiveClock;
+</script>
 
 @yield('page-js')
 

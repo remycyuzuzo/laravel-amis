@@ -2,7 +2,7 @@
     <x-page-title-bar :breadcrumbMenuItems="[['text' => 'Customers', 'link' => '/']]" title="Client Registration" />
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form action="" method="post">
+            <form action="{{ route('client_register') }}" method="post">
                 <div class="row">
                     <div class="col-md-6">
                         <x-form.input-text name="fname" label="First Name" placeholder="First name" required />
@@ -12,6 +12,7 @@
                     </div>
                 </div>
                 <x-form.input-text type="email" name="email" label="Email Address" required />
+                <x-form.input-text type="tel" name="phone_number" label="Phone number" />
                 <x-form.select :options="[
                     ['text' => 'Request New ID Card', 'value' => 'RequestNewID'],
                     ['text' => 'ID info correction', 'value' => 'correction'],

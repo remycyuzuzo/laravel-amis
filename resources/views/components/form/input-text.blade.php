@@ -7,11 +7,7 @@
     @endisset
     <input type="{{ isset($type) ? $type : 'text' }}" name="{{ $name }}" id="{{ $name }}"
         class="form-control" @required(isset($required))
-        placeholder="
-        @if (isset($placeholder)) {{ $placeholder }}
-@elseif($label)
-{{ $label }} @endif
-        " />
+        placeholder="@if (isset($placeholder)) {{ $placeholder }} @elseif($label) {{ $label }} @endif" />
     @error($name)
         <span class="text-danger">{{ $message }}</span>
     @enderror

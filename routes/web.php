@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,14 +18,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth')->group(function () {
     Route::get('/', function () {
         return view('dashboard');
-    });
+    })->name('dashboard');
 
-    Route::get('/client-register', function () {
-        return view('customers.register-customer');
-    });
+    // customers
+    Route::get('customer-registration', [CustomerController::class, 'create'])->name('client_register'); // display form
+    Route::post('customer-registration', [CustomerController::class, 'store']); // submit form
 });
 
 Route::middleware('guest')->group(function () {
     Route::get('login', [LoginController::class, 'renderLogin'])->name('login');
-    Route::post('/login', [LoginController::class, 'loginUser']);
+    Route::post('login', [LoginController::class, 'loginUser']);
 });
