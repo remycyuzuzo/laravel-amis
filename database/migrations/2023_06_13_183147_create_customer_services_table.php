@@ -19,7 +19,7 @@ return new class extends Migration
 
             $table->foreignId('customer_id')->constrained('customers')->cascadeOnDelete();
             $table->foreignId('service_id')->constrained('services')->cascadeOnDelete();
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->string('status', 10);
         });
     }

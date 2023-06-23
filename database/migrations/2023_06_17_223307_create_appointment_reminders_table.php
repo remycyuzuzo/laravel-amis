@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreignId('appointment_id')->constrained('appointments')->cascadeOnDelete();
-            $table->dateTime('sending_time'); // update here with appropriate default date settings
+            $table->dateTime('sending_time');
             $table->string('status', 20);
         });
     }

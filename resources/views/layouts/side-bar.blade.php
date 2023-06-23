@@ -36,7 +36,7 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="#" class="nav-link">
+                             <a href="{{ route('customers') }}" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>view customers</p>
                              </a>

@@ -5,9 +5,8 @@
             <span class="text-danger">*</span>
         @endisset
     @endisset
-    <input type="{{ isset($type) ? $type : 'text' }}" name="{{ $name }}" id="{{ $name }}"
-        value="{{ isset($value) ? $value : old($name) }}" class="form-control" @required(isset($required))
-        placeholder="@if (isset($placeholder)) {{ $placeholder }} @elseif($label) {{ $label }} @endif" />
+    <textarea name="{{ $name }}" id="{{ $name }}" class="form-control" cols="30" rows="3"
+        placeholder="@if (isset($placeholder)) {{ $placeholder }} @elseif($label) {{ $label }} @endif">{{ $slot }}</textarea>
     @error($name)
         <span class="text-danger">{{ $message }}</span>
     @enderror

@@ -23,6 +23,8 @@ Route::middleware('auth')->group(function () {
     // customers
     Route::get('customer-registration', [CustomerController::class, 'create'])->name('client_register'); // display form
     Route::post('customer-registration', [CustomerController::class, 'store']); // submit form
+    //display customers
+    Route::get('customers', [CustomerController::class, 'display_customers_fe'])->name('customers');
 });
 
 Route::middleware('guest')->group(function () {

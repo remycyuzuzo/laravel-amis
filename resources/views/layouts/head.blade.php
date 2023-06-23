@@ -20,7 +20,8 @@
         integrity="sha512-IuO+tczf4J43RzbCMEFggCWW5JuX78IrCJRFFBoQEXNvGI6gkUw4OjuwMidiS4Lm9Q2lILzpJwZuMWuSEeT9UQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    @yield('page-css')
+
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
-    @yield('page-css')
 </head>

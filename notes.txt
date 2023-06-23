@@ -1,0 +1,22 @@
+CREATE A COMPONENT
+php artisan make:component forms.input --view     --> https://laravel.com/docs/10.x/blade#components
+
+
+--> breadcrumb array:  
+breadcrumbMenuItems = [['text' => 'Dashboard', 'link' => '/'], ['text' => 'Something', 'link' => '/testLink']]
+
+--> Input text
+<x-form.input-text name="fname" label="First Name" placeholder="First name" />
+
+--> Select element
+<x-form.select :options="[
+                    ['text' => 'Request New ID Card', 'value' => 'RequestNewID'],
+                    ['text' => 'ID info correction', 'value' => 'correction'],
+                    ['text' => 'Special service', 'value' => 'special'],
+                ]" label="Service" placeholder="Please select the service"
+                    name="service" />
+
+
+
+--> DUMMY DATA FOR Database
+User::create(['fname' => 'John', 'lname' => 'Bosco', 'email' => 'john@gmail.com', 'password' => Hash::make('1234')])
