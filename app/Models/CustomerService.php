@@ -15,4 +15,14 @@ class CustomerService extends Model
         'description',
         'status',
     ];
+
+    function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
+
+    function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
 }

@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CustomerServiceController;
 use App\Http\Controllers\LoginController;
+use App\Models\CustomerService;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +27,9 @@ Route::middleware('auth')->group(function () {
     Route::post('customer-registration', [CustomerController::class, 'store']); // submit form
     //display customers
     Route::get('customers', [CustomerController::class, 'display_customers_fe'])->name('customers');
+
+    // customer cases/services
+    Route::get('cases', [CustomerServiceController::class, 'display_cases_fe'])->name('cases');
 });
 
 Route::middleware('guest')->group(function () {

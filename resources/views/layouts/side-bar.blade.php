@@ -21,7 +21,30 @@
                      </a>
                  </li>
                  <li class="nav-item menu-open">
-                     <a href="#" class="nav-link active">
+                     <a href="{{ route('cases') }}" class="nav-link active">
+                         <i class="nav-icon fas fa-webcam"></i>
+                         <p>
+                             Cases
+                             <i class="right fas fa-angle-left"></i>
+                         </p>
+                     </a>
+                     <ul class="nav nav-treeview">
+                         <li class="nav-item">
+                             <a href="{{ route('cases') }}" class="nav-link active">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>Cases</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="{{ route('customers') }}" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>view customers</p>
+                             </a>
+                         </li>
+                     </ul>
+                 </li>
+                 <li class="nav-item">
+                     <a href="#" class="nav-link">
                          <i class="nav-icon fas fa-users"></i>
                          <p>
                              Customers
@@ -30,7 +53,7 @@
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="{{ route('client_register') }}" class="nav-link active">
+                             <a href="{{ route('client_register') }}" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>New customer</p>
                              </a>

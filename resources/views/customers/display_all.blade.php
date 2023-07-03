@@ -37,8 +37,12 @@
                             <td>{{ $customer->phone_number }}</td>
                             <td>{{ Carbon::parse($customer->created_at)->diffForHumans() }}</td>
                             <td>{{ '' }}</td>
-                            <td><a href="edit={{ $customer->id }}" class="btn btn-secondary btn-xs"><i
-                                        class="fas fa-edit"></i> edit</a></td>
+                            <td>
+                                <a href="edit={{ $customer->id }}" class="btn btn-secondary btn-xs"><i
+                                        class="fas fa-edit"></i> edit</a>
+                                <a href="delete={{ $customer->id }}" class="btn btn-danger btn-xs"><i
+                                        class="fas fa-trash"></i> delete</a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
